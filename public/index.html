@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#df262b">
+    <meta name="description" content="Pokédex UC33: consulte Pokémon por nome ou número.">
+    <title>Pokédex UC33</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <main class="pokedex" aria-labelledby="titulo">
+      <header class="topo">
+        <div class="lente-grande" aria-hidden="true"><span></span></div>
+        <div class="luzes" aria-hidden="true">
+          <i class="luz luz-vermelha"></i>
+          <i class="luz luz-amarela"></i>
+          <i class="luz luz-verde"></i>
+        </div>
+        <div class="marca"><span class="marca-simbolo" aria-hidden="true">◉</span><span>UC33 · LABORATÓRIO</span></div>
+      </header>
+
+      <section class="corpo">
+        <div class="titulo-linha">
+          <div>
+            <p class="sobretitulo">GUIA DE CAMPO DIGITAL</p>
+            <h1 id="titulo">Pokédex</h1>
+          </div>
+          <span class="versao">Nº 01</span>
+        </div>
+
+        <section class="visor" aria-label="Informações do Pokémon">
+          <div class="visor-cabecalho"><span>POKÉMON ENCONTRADO</span><span class="sinal">● AO VIVO</span></div>
+          <p id="aviso" class="aviso info" role="status" aria-live="polite" hidden></p>
+          <div class="palco-imagem">
+            <div class="anel-imagem" aria-hidden="true"></div>
+            <span id="imagem-indisponivel" class="imagem-indisponivel" hidden>SPRITE INDISPONÍVEL</span>
+            <img id="imagem" class="sprite" alt="" hidden>
+          </div>
+          <div class="identidade">
+            <span id="numero" class="numero">#---</span>
+            <h2 id="nome" class="nome">Aguardando busca</h2>
+          </div>
+          <ul id="tipos" class="tipos" aria-label="Tipos do Pokémon"></ul>
+        </section>
+
+        <form id="busca" class="form-busca">
+          <label for="termo">Quem vamos encontrar?</label>
+          <div class="campo-linha">
+            <input id="termo" name="termo" type="search" placeholder="Nome ou número (ex.: pikachu)" maxlength="40" required autocomplete="off" aria-label="Nome ou número do Pokémon">
+            <button class="botao botao-buscar" type="submit">Buscar</button>
+          </div>
+        </form>
+
+        <nav class="navegacao" aria-label="Navegação entre Pokémon">
+          <button id="anterior" class="botao botao-secundario" type="button" aria-label="Pokémon anterior">← <span>Anterior</span></button>
+          <button id="aleatorio" class="botao botao-aleatorio" type="button" aria-label="Buscar Pokémon aleatório"><span aria-hidden="true">⤨</span> Aleatório</button>
+          <button id="proximo" class="botao botao-secundario" type="button" aria-label="Próximo Pokémon"><span>Próximo</span> →</button>
+        </nav>
+
+        <footer class="rodape"><span>Digite um nome ou número da Pokédex nacional.</span><span>Dados via PokéAPI</span></footer>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
